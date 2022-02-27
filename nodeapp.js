@@ -8,6 +8,6 @@ http.createServer((req, res)=>{
    }else{
        res.end('error')
    }
-}).listen(80, ()=>{
+}).listen(process.env.PORT || 80, ()=>{
     console.log('success')
 })
