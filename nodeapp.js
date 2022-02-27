@@ -4,7 +4,8 @@ const fs = require('fs');
 http.createServer((req, res)=>{
    if(req.url = '/json'){
        const data =  fs.readFileSync('./httpserver/api.json')
-       res.end(data)
+       const obj = JSON.parse(data)
+       res.end(obj[1].title)
    }else{
        res.end('error')
    }
